@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1>Controle de Tarefas</h1>
+        <p>Organize suas atividades e acompanhe sua produtividade.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="indicadores">
+            <div class="card-indicador">
+                <h3>Total de tarefas</h3>
+                <p id="totalTarefas">0</p>
+            </div>
+
+            <div class="card-indicador">
+                <h3>Pendentes</h3>
+                <p id="tarefasPendentes">0</p>
+            </div>
+
+            <div class="card-indicador">
+                <h3>Em andamento</h3>
+                <p id="tarefasAndamento">0</p>
+            </div>
+
+            <div class="card-indicador">
+                <h3>Concluídas</h3>
+                <p id="tarefasConcluidas">0</p>
+            </div>
+        </section>
+
+        <section class="secao-formulario">
+            <h2>Cadastrar nova tarefa</h2>
+
+            <form id="formTarefa">
+
+                <div class="campo">
+                    <label for="titulo">Título da tarefa</label>
+                    <input type="text" id="titulo"
+                        placeholder="Ex: Desenvolver um projeto" required>
+                </div>
+
+                <div class="campo">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao"
+                        placeholder="Descreva a atividade"></textarea>
+                </div>
+
+                <div class="campo">
+                    <label for="prioridade">Prioridade</label>
+                    <select id="prioridade" required>
+                        <option value="">Selecione</option>
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média">Média</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="prazo">Prazo</label>
+                    <input type="date" id="prazo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="status">Status</label>
+                    <select id="status" required>
+                        <option value="Pendente">Pendente</option>
+                        <option value="Em andamento">Em andamento</option>
+                        <option value="Concluída">Concluída</option>
+                    </select>
+                </div>
+
+                <div class="botoes-formulario">
+                    <button type="submit" id="botaoSalvar">
+                        Cadastrar tarefa
+                    </button>
+
+                    <button type="button" id="botaoCancelar" hidden>
+                        Cancelar edição
+                    </button>
+                </div>
+
+                <p id="mensagem"></p>
+
+            </form>
+        </section>
+
+        <section class="secao-tarefas">
+            <h2>Minhas tarefas</h2>
+
+            <div class="filtros">
+                <input type="search" id="pesquisa"
+                    placeholder="Pesquisar tarefa...">
+
+                <select id="filtroStatus">
+                    <option value="">Todos os status</option>
+                    <option value="Pendente">Pendente</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Concluída">Concluída</option>
+                </select>
+
+                <select id="filtroPrioridade">
+                    <option value="">Todas as prioridades</option>
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média">Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+            </div>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tarefa</th>
+                            <th>Descrição</th>
+                            <th>Prioridade</th>
+                            <th>Prazo</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabelaTarefas"></tbody>
+                </table>
+
+                <p id="tabelaVazia">
+                    Nenhuma tarefa cadastrada.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Projeto 10 — Sistema de Controle de Tarefas</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

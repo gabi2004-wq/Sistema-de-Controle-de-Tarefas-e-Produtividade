@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.cabecalho {
+    background: #172554;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.cabecalho h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.cabecalho p {
+    color: #cbd5e1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.card-indicador {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    border-left: 5px solid #2563eb;
+}
+
+.card-indicador h3 {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.card-indicador p {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 8px;
+    color: #172554;
+}
+
+.secao-formulario,
+.secao-tarefas {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.secao-formulario h2,
+.secao-tarefas h2 {
+    margin-bottom: 20px;
+    color: #172554;
+}
+
+#formTarefa {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 14px;
+    font-family: inherit;
+    background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.botoes-formulario {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 11px 17px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#botaoSalvar {
+    background: #2563eb;
+    color: white;
+}
+
+#botaoSalvar:hover {
+    background: #1d4ed8;
+}
+
+#botaoCancelar {
+    background: #64748b;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#mensagem {
+    grid-column: 1 / -1;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#mensagem.sucesso {
+    color: #15803d;
+}
+
+#mensagem.erro {
+    color: #dc2626;
+}
+
+.filtros {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.tabela-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+th,
+td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+th {
+    background: #eff6ff;
+    color: #172554;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+.acoes {
+    display: flex;
+    gap: 7px;
+}
+
+.botao-editar {
+    background: #f59e0b;
+    color: white;
+}
+
+.botao-excluir {
+    background: #dc2626;
+    color: white;
+}
+
+#tabelaVazia {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+@media (max-width: 800px) {
+    .indicadores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filtros {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        width: 94%;
+    }
+
+    .indicadores {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .card-indicador {
+        padding: 15px;
+    }
+
+    .card-indicador p {
+        font-size: 22px;
+    }
+
+    #formTarefa {
+        grid-template-columns: 1fr;
+    }
+
+    .secao-formulario,
+    .secao-tarefas {
+        padding: 17px;
+    }
+
+    .cabecalho h1 {
+        font-size: 24px;
+    }
+}
